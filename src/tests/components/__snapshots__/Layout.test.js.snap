@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render layout component page 1`] = `
+<div>
+  <header>
+    <h1>
+      Expensify
+    </h1>
+    <ul>
+      <li
+        key="0"
+      >
+        <[object Object]
+          end={true}
+          to="/"
+        >
+          Home
+        </[object Object]>
+      </li>
+      <li
+        key="1"
+      >
+        <[object Object]
+          end={true}
+          to="/create"
+        >
+          Add an expense
+        </[object Object]>
+      </li>
+      <li
+        key="2"
+      >
+        <[object Object]
+          end={true}
+          to="/help"
+        >
+          Help
+        </[object Object]>
+      </li>
+    </ul>
+    <hr />
+  </header>
+  <Outlet />
+</div>
+`;

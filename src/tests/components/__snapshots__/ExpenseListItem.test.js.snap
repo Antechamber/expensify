@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render ExpenseListItem component 1`] = `
+<div>
+  <[object Object]
+    to="/edit/2"
+  >
+    Gas
+  </[object Object]>
+  <p>
+    9000
+  </p>
+  <p>
+    Saturday, December 27th 1969
+  </p>
+</div>
+`;
