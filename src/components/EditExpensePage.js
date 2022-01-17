@@ -3,30 +3,45 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { connect, useSelector } from 'react-redux'
 import ExpenseForm from './ExpenseForm'
 import { editExpense, removeExpense } from '../actions/expenses'
-import { ProgressPlugin } from 'webpack'
 
-export const EditExpensePage = (props) => {
+export class EditExpensePage extends React.Component {
+    editExpense = (expense) => {
+        this.props.editExpense(this.props.id, expense)
+        this.props.navigate('/')
+    }
+    removeExpense = (expense) => {
+        this.props.removeExpense(this.props.id, expense)
+        this.props.navigate('/')
+    }
+    render() {
+        return (
+            <div>
+                <ExpenseForm
+                    expense={this.props.expense}
+                    onSubmit={this.editExpense}
+                />
+                <button onClick={this.removeExpense}>Remove</button>
+            </div>
+        )
+    }
+
+
+}
+
+const EditExpensePageWrapped = (props) => {
     const { id } = useParams()
     const expense = useSelector((state) => {
         return state.expenses.find((expense) => expense.id === id)
     })
     const navigate = useNavigate()
     return (
-        <div>
-            <ExpenseForm
-                expense={expense}
-                onSubmit={(expense) => {
-                    props.editExpense(id, expense)
-                    navigate('/')
-                }}
-            />
-            <button onClick={() => {
-                ProgressPlugin.removeExpense(id)
-                navigate('/')
-            }} >Remove</button>
-        </div>
+        <EditExpensePage
+            {...props}
+            id={id}
+            expense={expense}
+            navigate={navigate}
+        />
     )
-
 }
 
 const mapDispatchToProps = (dispatch) => ({
@@ -35,4 +50,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-export default connect(undefined, mapDispatchToProps)(EditExpensePage)
+export default connect(undefined, mapDispatchToProps)(EditExpensePageWrapped)
