@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json --runInBand"
   },
@@ -40,7 +41,7 @@
     "style-loader": "^0.18.2",
     "uuid": "^8.3.2",
     "validator": "^13.7.0",
-    "webpack": "^3.1.0",
+    "webpack": "^5.66.0",
     "webpack-dev-server": "^2.5.1",
     "yarn": "^1.22.17"
   },
@@ -48,6 +49,8 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "jest": "^27.4.7",
-    "jest-react-hooks-shallow": "^1.5.1"
+    "jest-react-hooks-shallow": "^1.5.1",
+    "mini-css-extract-plugin": "^2.5.2",
+    "webpack-cli": "^4.9.1"
   }
 }
