@@ -45,6 +45,9 @@
     "yarn": "^1.22.17"
   },
   "devDependencies": {
-    "jest": "^27.4.7"
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "jest": "^27.4.7",
+    "jest-react-hooks-shallow": "^1.5.1"
   }
 }
