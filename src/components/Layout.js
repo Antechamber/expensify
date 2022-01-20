@@ -6,7 +6,7 @@ const Layout = () => (
         <header>
             <h1>Expensify</h1>
             <ul>
-                {[['Home', '/'], ['Add an expense', '/create'], ['Help', '/help']].map((page, i) => (
+                {[['Home', '/'], ['Add an expense', '/create']].map((page, i) => (
                     <li key={i}>
                         <NavLink to={page[1]} end>{page[0]}</NavLink>
                     </li>
