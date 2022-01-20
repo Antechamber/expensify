@@ -27,16 +27,6 @@ exports[`Should render layout component page 1`] = `
           Add an expense
         </[object Object]>
       </li>
-      <li
-        key="2"
-      >
-        <[object Object]
-          end={true}
-          to="/help"
-        >
-          Help
-        </[object Object]>
-      </li>
     </ul>
     <hr />
   </header>
