@@ -26,7 +26,13 @@ export const ExpenseListFilters = (props) => {
     return (
         <div>
             <label htmlFor="textFilter">Filter</label>
-            <input id="textFilter" type="text" value={props.filters.text} onChange={onTextChange} />
+            <input
+                id="textFilter"
+                type="text"
+                value={props.filters.text}
+                onChange={onTextChange}
+                autoComplete='off'
+            />
             <select
                 value={props.filters.sortBy}
                 onChange={onSortChange}>

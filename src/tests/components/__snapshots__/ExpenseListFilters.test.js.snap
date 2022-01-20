@@ -9,6 +9,7 @@ exports[`Should render ExpenseListFilters correctly with default filter values 1
       Filter
     </label>
     <input
+      autocomplete="off"
       id="textFilter"
       type="text"
       value=""
@@ -121,6 +122,7 @@ exports[`Should render ExpenseListFilters with changed filter values 1`] = `
       Filter
     </label>
     <input
+      autocomplete="off"
       id="textFilter"
       type="text"
       value="s"

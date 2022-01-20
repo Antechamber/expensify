@@ -8,7 +8,7 @@ exports[`Should render ExpenseListItem component 1`] = `
     Gas
   </[object Object]>
   <p>
-    9000
+    $90.00
   </p>
   <p>
     Saturday, December 27th 1969
