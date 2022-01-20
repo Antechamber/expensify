@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expect ExpensesSummary component to render correctly with multiple expenses 1`] = `
+<DocumentFragment>
+  <div>
+    <h3>
+      Viewing 5 expenses totalling $1.00
+    </h3>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Expect ExpensesSummary component to render correctly with no expenses 1`] = `
+<DocumentFragment>
+  <div>
+    <h3>
+      Viewing 0 expenses totalling $0.00
+    </h3>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Expect ExpensesSummary component to render correctly with one expenses 1`] = `
+<DocumentFragment>
+  <div>
+    <h3>
+      Viewing 1 expense totalling $0.04
+    </h3>
+  </div>
+</DocumentFragment>
+`;
