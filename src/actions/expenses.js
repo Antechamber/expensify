@@ -7,6 +7,7 @@ export const addExpense = (expense) => ({
   expense
 })
 
+// this action 'constructor' first updates the firebase db, then dispatches the original addExpense function
 export const startAddExpense = (expenseData = {}) => {
   return (dispatch) => {
     const {
