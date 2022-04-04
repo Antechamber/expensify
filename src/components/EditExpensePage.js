@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { connect, useSelector } from 'react-redux'
 import ExpenseForm from './ExpenseForm'
-import { editExpense, startRemoveExpense } from '../actions/expenses'
+import { startEditExpense, startRemoveExpense } from '../actions/expenses'
 
 export class EditExpensePage extends React.Component {
   editExpense = (expense) => {
@@ -49,7 +49,7 @@ const EditExpensePageWrapped = (props) => {
 // mapping the dispatch method to props of component.
 // this abstracts the usage to testing is easier/disconnected from redux
 const mapDispatchToProps = (dispatch) => ({
-  editExpense: (id, expense) => dispatch(editExpense(id, expense)),
+  editExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
   removeExpense: (id) => dispatch(startRemoveExpense({ id }))
 })
 

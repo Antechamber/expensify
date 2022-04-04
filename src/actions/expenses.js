@@ -1,12 +1,12 @@
 import database from '../firebase/firebase'
-import { ref, push, get, child, set } from 'firebase/database'
+import { ref, push, get, child, set, update } from 'firebase/database'
 
+// add expense
 export const addExpense = (expense) => ({
   type: 'ADD_EXPENSE',
   expense
 })
 
-// this action 'constructor' first updates the firebase db, then dispatches the original addExpense function
 export const startAddExpense = (expenseData = {}) => {
   return (dispatch) => {
     const {
@@ -26,6 +26,7 @@ export const startAddExpense = (expenseData = {}) => {
   }
 }
 
+// remove expense
 export const removeExpense = ({ id } = {}) => ({
   type: 'REMOVE_EXPENSE',
   id
@@ -38,14 +39,21 @@ export const startRemoveExpense = ({ id } = {}) => {
   }
 }
 
+// edit expense
 export const editExpense = (id, updates) => ({
   type: 'EDIT_EXPENSE',
   id,
   updates
 })
 
-// set expenses in store from firebase db
+export const startEditExpense = (id, updates) => {
+  return (dispatch) => {
+    return update(ref(database, `expenses/${id}`), updates)
+      .then(() => dispatch(editExpense(id, updates)))
+  }
+}
 
+// get expenses from firebase and put them in local redux store
 export const setExpenses = (expenses = []) => ({
   type: 'SET_EXPENSES',
   expenses
